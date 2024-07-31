@@ -22,3 +22,7 @@ jobs:
                 echo "Line 1"
                 echo "Line 2"
                 echo "::endgroup::"
+            - name: Masking
+              run: echo "::add-mask::MY SECRET STRING"
+            - name: Echo a Secret
+              run: echo "MY SECRET STRING"
