@@ -11,3 +11,5 @@ jobs:
               run : echo "::error title=ERRORR TITLE, file=app.js, line=2, enfLine=3, col=5, endCol=5::Missing Semicolon"
             - name: Setting an DEBUG message with parameters
               run : echo "::debug title=DEBUG TITLE, file=app.js, line=2, enfLine=3, col=5, endCol=5::Missing Semicolon"
+            - name: Setting an WARNING message with parameters
+              run : echo "::warning title=WARNING TITLE, file=app.js, line=2, enfLine=3, col=5, endCol=5::Missing Semicolon"
