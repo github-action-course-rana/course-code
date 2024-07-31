@@ -1,5 +1,8 @@
 name: Working Directory and Shells
 on: [push]
+defaults:
+    run:
+        shell: bash
 jobs:
     display-working-directory-ubuntu:
         runs-on: ubuntu-latest
@@ -14,11 +17,14 @@ jobs:
 
     display-working-directory-windows:
         runs-on: windows-latest
+        defaults:
+            run:
+                shell: pwsh
         steps:
             - name: Display working directoy and list files
               run: |
-                pwd
-                ls 
-                echo $GITHUB_SHA
-                echo $GITHUB_REPOSITORY
-                echo $GITHUB_WORKSPACE
+                Get-Location
+                dir
+                echo $env:GITHUB_SHA
+                echo $env:GITHUB_REPOSITORY
+                echo $env:GITHUB_WORKSPACE
