@@ -10,4 +10,17 @@ jobs:
             - name: Multiline Commands
               run: |
                 node -v
-                npm -v 
+                npm -v
+    parallel-job-macos:
+        runs-on: macos-latest
+        steps:
+            - name: View Software Version
+              run: sw_version
+    Dependent-Jobs:
+        runs-on: windows-latest
+        needs: run-shell-commands
+        steps:
+            - name: Print a String
+              run: Write-Output "Hello from Windows"
+            - name: Error Step
+              run: Doesnot exists
