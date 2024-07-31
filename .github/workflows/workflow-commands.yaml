@@ -15,3 +15,10 @@ jobs:
               run : echo "::warning title=WARNING TITLE, file=app.js, line=2, enfLine=3, col=5, endCol=5::Missing Semicolon"
             - name: Setting an NOTICE message with parameters
               run : echo "::notice title=NOTICE TITLE, file=app.js, line=2, enfLine=3, col=5, endCol=5::Missing Semicolon"
+            - name: Group of Logs
+              run : |
+                echo "::group::MY GROUP TITLE"
+                echo "Inside Group"
+                echo "Line 1"
+                echo "Line 2"
+                echo "::endgroup::"
