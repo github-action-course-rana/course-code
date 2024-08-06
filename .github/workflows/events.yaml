@@ -5,8 +5,12 @@ jobs:
   Checkout-Test:
     runs-on: ubuntu-latest
     steps:
-        - name: abc
+        - name: Before checkout
+          run: ls -la
+        - name: Environment Variables
           run: |
             echo $GITHUB_SHA
             echo $GITHUB_REF
         - uses: actions/checkout@v3
+        - name: After Checkout
+          run: ls -la  
