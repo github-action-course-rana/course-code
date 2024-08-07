@@ -1,0 +1,11 @@
+name: Repository Events 2
+on: [push, pull_request, issues]
+
+jobs:
+  Checkout Events:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo $GITHUB_SHA
+          ECHO $GITHUB_REF
+      - uses: actions/checkout@v3
