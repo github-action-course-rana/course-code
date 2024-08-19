@@ -4,7 +4,7 @@ on:
     types: [opened]
 
 jobs:
-  pr-comment:
+  pr-comments:
     runs-on: ubuntu-latest
     steps:
       - name: Comment on New PRs
