@@ -3,7 +3,7 @@ on:
   pull_request_target:
     types: [opened]
 jobs:
-  pr-comment:
+  pr-commentsss:
     runs-on: ubuntu-latest
     steps:
       - name: Comment on New PRs
