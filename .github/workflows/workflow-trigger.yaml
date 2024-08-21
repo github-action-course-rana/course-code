@@ -39,8 +39,8 @@ jobs:
     steps:
       - run: echo $GITHUB_REF
       - run: |
-          echo "String: ${{ inputs:String }}"
-          echo "Number: ${{ inputs:Number }}"
-          echo "Options: ${{ inputs:option }}"
-          echo "Boolean: ${{ inputs:Boolean }}"
-          echo "Environment: ${{ inputs:environment }}"
+          echo "String: ${{ inputs.string }}"
+          echo "Number: ${{ inputs.number }}"
+          echo "Options: ${{ inputs.option }}"
+          echo "Boolean: ${{ inputs.boolean }}"
+          echo "Environment: ${{ inputs.environment }}"
