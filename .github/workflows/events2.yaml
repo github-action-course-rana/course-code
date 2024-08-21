@@ -2,6 +2,21 @@ name: Repository Events 2
 #on: [push, pull_request, issues]
 on:
   push:
+    branches:
+      - main
+      - "feature/*" # will run for any feature branch but not faeture/featA/featX
+      - "feature/**" ## will match every feature branch
+      - "!feature/fest" ## exclamation mark (!) will exclude that branch from triggering
+    # branches-ignore: # Branches and branches-ignore cannot be run in same workflow
+    #   - dev # 
+
+    tags:
+      - v1.* # will match v1.2 v.1.2.3
+      - "!v1.1.1" # will exclude v1.1.1 from matching
+
+    paths: # this will match specific file
+      - "**.js"
+      - "!app.js"
   pull_request:
     types: [opened, assigned, reopened, synchronize]
   issues:
