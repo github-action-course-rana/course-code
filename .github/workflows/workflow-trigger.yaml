@@ -2,7 +2,7 @@ name: Workflow Trigger
 on:
   workflow_dispatch:
     inputs:
-      Display-String:
+      DisplayString:
         description: 'Here goes a description'
         type: string
         required: true
@@ -39,7 +39,7 @@ jobs:
     steps:
       - run: echo $GITHUB_REF
       - run: |
-          echo "String: ${{ inputs:Display-String }}"
+          echo "String: ${{ inputs:DisplayString }}"
           echo "Number: ${{ inputs:Input-Number }}"
           echo "Options: ${{ inputs:Select-option }}"
           echo "Boolean: ${{ inputs:Boolean-Input }}"
