@@ -1,9 +1,46 @@
 name: Workflow Trigger
 on:
   workflow_dispatch:
+    inputs:
+      Display-String:
+        description: 'Here goes a description'
+        type: string
+        required: true
+        default: "RDx"
+
+      Input-Number:
+        description: Number is needed
+        type: number
+        default: 33
+
+      Select-option:
+        description: Optionss section
+        type: choice
+        required: true
+        default: "Option 2"
+        options:
+          - Option 1
+          - Option 2
+          - Option 3
+
+      Boolean-Input:
+        description: Input a boolean
+        required: false
+        type: boolean
+
+      Environment:
+        description: Environment Section
+        type: environment
+        required: true
 
 jobs:
   log-info:
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_REF
+      - run: |
+          echo "String: ${{ inputs:Display-String }}"
+          echo "Number: ${{ inputs:Input-Number }}"
+          echo "Options: ${{ inputs:Select-option }}"
+          echo "Boolean: ${{ inputs:Boolean-Input }}"
+          echo "Environment: ${{ inputs:Environment }}"
